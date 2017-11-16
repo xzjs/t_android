@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">t_android</string>
     <string name="action_settings">Settings</string>
+    <string name="hello">hello</string>
+    <string name="show">显示设置</string>
+    <string name="clock">闹钟设置</string>
+    <string name="time">时间设置</string>
+    <string name="my">我的</string>
 </resources>

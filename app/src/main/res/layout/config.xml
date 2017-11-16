@@ -7,18 +7,40 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <LinearLayout
+        <RadioGroup
+            android:id="@+id/rg_tab_bar"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="hello"/>
-        </LinearLayout>
-        <LinearLayout
+            android:layout_height="56dp"
+            android:layout_alignParentBottom="true"
+            android:background="#01806F"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/show"
+                style="@style/tab_menu_item"
+                android:text="@string/show" />
+
+            <RadioButton
+                android:id="@+id/clock"
+                style="@style/tab_menu_item"
+                android:text="@string/clock" />
+
+            <RadioButton
+                android:id="@+id/time"
+                style="@style/tab_menu_item"
+                android:text="@string/time" />
+
+            <RadioButton
+                android:id="@+id/my"
+                style="@style/tab_menu_item"
+                android:text="@string/my"/>
+
+        </RadioGroup>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vpager"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="12"></LinearLayout>
+            android:layout_height="match_parent"/>
+
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
