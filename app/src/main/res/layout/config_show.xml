@@ -1,209 +1,239 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
+
             <include
 
                 layout="@layout/content_main" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2"
             android:orientation="vertical">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="8sp"
                     android:text="显示时间"
-                    android:layout_alignParentLeft="true"
-                    android:textSize="16sp"
-                    android:layout_margin="8sp"
-                    android:layout_centerInParent="true"
-                    android:layout_alignParentStart="true" />
+                    android:textSize="16sp" />
+
                 <Switch
+                    android:id="@+id/switch_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textOff=""
-                    android:textOn=""
-                    android:layout_alignParentRight="true"
-                    android:layout_margin="8sp"
-                    android:layout_centerInParent="true"
                     android:layout_alignParentEnd="true"
-                    android:shadowColor="#00E266"/>
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="8sp"
+                    android:shadowColor="#00E266"
+                    android:textOff=""
+                    android:textOn="" />
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="8sp"
                     android:text="显示日期"
-                    android:layout_alignParentLeft="true"
-                    android:textSize="16sp"
-                    android:layout_margin="8sp"
-                    android:layout_centerInParent="true"
-                    android:layout_alignParentStart="true" />
+                    android:textSize="16sp" />
+
                 <Switch
+                    android:id="@+id/switch_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textOff=""
-                    android:textOn=""
-                    android:layout_alignParentRight="true"
-                    android:layout_margin="8sp"
-                    android:layout_centerInParent="true"
-                    android:layout_alignParentEnd="true" />
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="显示星期"
-                    android:layout_alignParentLeft="true"
-                    android:textSize="16sp"
-                    android:layout_margin="8sp"
-                    android:layout_centerInParent="true"
-                    android:layout_alignParentStart="true" />
-                <Switch
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textOff=""
-                    android:textOn=""
-                    android:layout_alignParentRight="true"
-                    android:layout_margin="8sp"
-                    android:layout_centerInParent="true"
-                    android:layout_alignParentEnd="true" />
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="显示天气地点"
-                    android:layout_alignParentLeft="true"
-                    android:textSize="16sp"
-                    android:layout_margin="8sp"
-                    android:layout_centerInParent="true"
-                    android:layout_alignParentStart="true" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_margin="8sp"
-                    android:layout_centerInParent="true"
                     android:layout_alignParentEnd="true"
-                    android:text="北京市 海淀区"/>
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="8sp"
+                    android:textOff=""
+                    android:textOn="" />
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="8sp"
+                    android:text="显示星期"
+                    android:textSize="16sp" />
+
+                <Switch
+                    android:id="@+id/switch_week"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="8sp"
+                    android:textOff=""
+                    android:textOn="" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="8sp"
+                    android:text="显示天气地点"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="8sp"
+                    android:text="北京市 海淀区" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="8sp"
                     android:text="显示当天天气"
-                    android:layout_alignParentLeft="true"
-                    android:textSize="16sp"
-                    android:layout_margin="8sp"
-                    android:layout_centerInParent="true"
-                    android:layout_alignParentStart="true" />
+                    android:textSize="16sp" />
+
                 <Switch
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textOff=""
-                    android:textOn=""
+                    android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_margin="8sp"
                     android:layout_centerInParent="true"
-                    android:layout_alignParentEnd="true" />
+                    android:layout_margin="8sp"
+                    android:textOff=""
+                    android:textOn="" />
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="8sp"
                     android:text="显示第二天天气"
-                    android:layout_alignParentLeft="true"
-                    android:textSize="16sp"
-                    android:layout_margin="8sp"
-                    android:layout_centerInParent="true"
-                    android:layout_alignParentStart="true" />
+                    android:textSize="16sp" />
+
                 <Switch
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textOff=""
-                    android:textOn=""
+                    android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_margin="8sp"
                     android:layout_centerInParent="true"
-                    android:layout_alignParentEnd="true" />
+                    android:layout_margin="8sp"
+                    android:textOff=""
+                    android:textOn="" />
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="8sp"
                     android:text="显示第三天天气"
-                    android:layout_alignParentLeft="true"
-                    android:textSize="16sp"
-                    android:layout_margin="8sp"
-                    android:layout_centerInParent="true"
-                    android:layout_alignParentStart="true" />
+                    android:textSize="16sp" />
+
                 <Switch
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textOff=""
-                    android:textOn=""
+                    android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_margin="8sp"
                     android:layout_centerInParent="true"
-                    android:layout_alignParentEnd="true" />
+                    android:layout_margin="8sp"
+                    android:textOff=""
+                    android:textOn="" />
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="显示闹钟组数"
                     android:layout_alignParentLeft="true"
-                    android:textSize="16sp"
-                    android:layout_margin="8sp"
+                    android:layout_alignParentStart="true"
                     android:layout_centerInParent="true"
-                    android:layout_alignParentStart="true" />
+                    android:layout_margin="8sp"
+                    android:text="显示闹钟组数"
+                    android:textSize="16sp" />
+
                 <Spinner
                     android:id="@+id/spinner1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:entries="@array/clock_num"
-                    android:layout_alignParentRight="true"
-                    android:layout_margin="8sp"
-                    android:layout_centerInParent="true"
                     android:layout_alignParentEnd="true"
-                    android:spinnerMode="dialog"
-                    />
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="8sp"
+                    android:entries="@array/clock_num"
+                    android:spinnerMode="dialog" />
             </RelativeLayout>
         </LinearLayout>
     </LinearLayout>
