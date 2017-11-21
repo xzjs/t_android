@@ -13,9 +13,7 @@
             android:layout_height="0dp"
             android:layout_weight="1">
 
-            <include
-
-                layout="@layout/content_main" />
+            <include layout="@layout/content_main" />
         </LinearLayout>
 
         <LinearLayout
@@ -47,6 +45,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
                     android:layout_margin="8sp"
+                    android:checked="true"
                     android:shadowColor="#00E266"
                     android:textOff=""
                     android:textOn="" />
@@ -75,6 +74,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
                     android:layout_margin="8sp"
+                    android:checked="true"
                     android:textOff=""
                     android:textOn="" />
             </RelativeLayout>
@@ -102,6 +102,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
                     android:layout_margin="8sp"
+                    android:checked="true"
                     android:textOff=""
                     android:textOn="" />
             </RelativeLayout>
@@ -147,12 +148,14 @@
                     android:textSize="16sp" />
 
                 <Switch
+                    android:id="@+id/switch_weather1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
                     android:layout_margin="8sp"
+                    android:checked="true"
                     android:textOff=""
                     android:textOn="" />
             </RelativeLayout>
@@ -173,12 +176,14 @@
                     android:textSize="16sp" />
 
                 <Switch
+                    android:id="@+id/switch_weather2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
                     android:layout_margin="8sp"
+                    android:checked="true"
                     android:textOff=""
                     android:textOn="" />
             </RelativeLayout>
@@ -199,12 +204,14 @@
                     android:textSize="16sp" />
 
                 <Switch
+                    android:id="@+id/switch_weather3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
                     android:layout_margin="8sp"
+                    android:checked="true"
                     android:textOff=""
                     android:textOn="" />
             </RelativeLayout>
