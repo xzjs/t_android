@@ -6,10 +6,7 @@
     android:layout_height="match_parent"
     tools:context="love.xzjs.t_android.MainActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="error"/>
+    <include layout="@layout/content_main" />
 
 
 </android.support.v4.widget.DrawerLayout>

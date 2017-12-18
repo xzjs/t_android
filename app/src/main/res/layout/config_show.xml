@@ -123,13 +123,14 @@
                     android:textSize="16sp" />
 
                 <TextView
+                    android:id="@+id/locationTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_centerInParent="true"
                     android:layout_margin="8sp"
-                    android:text="北京市 海淀区" />
+                    android:text="" />
             </RelativeLayout>
 
             <RelativeLayout

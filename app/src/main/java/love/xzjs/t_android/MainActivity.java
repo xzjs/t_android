@@ -1,7 +1,10 @@
 package love.xzjs.t_android;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +13,9 @@ import android.util.Log;
 import android.view.WindowManager;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
 
 public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener, ViewPager.OnPageChangeListener {
 
@@ -31,16 +37,12 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
         int mCurrentOrientation = getResources().getConfiguration().orientation;
 
+        setContentView(R.layout.activity_main);
         if (mCurrentOrientation == Configuration.ORIENTATION_PORTRAIT) {
-            Log.i("info", "port");
-            setContentView(R.layout.config);
             myFragmentPagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager());
             bindViews();
             radioButtonShow.setChecked(true);
 
-        } else {
-            Log.i("info", "land");
-            setContentView(R.layout.activity_main);
         }
     }
 
