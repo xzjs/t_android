@@ -1,9 +1,12 @@
 package love.xzjs.t_android;
 
 import android.Manifest;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -25,13 +28,16 @@ import com.baidu.location.BDLocationListener;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 
-
 public class Show extends Fragment implements CompoundButton.OnCheckedChangeListener, BDLocationListener {
     private TextView textViewTime, textViewDate, textViewWeek,_locationTextView;
+    private Switch switchTime,switchDate,switchWeek,switchWeather1,switchWeather2,switchWeather3;
     private LinearLayout linearLayout1,linearLayout2,linearLayout3;
 
     private LocationClient _locationClient;
     private static final int BAIDU_READ_PHONE_STATE =100;
+
+    private MyDBOpenHelper myDBOpenHelper;
+    private Config config;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -53,12 +59,12 @@ public class Show extends Fragment implements CompoundButton.OnCheckedChangeList
         textViewTime.setTextSize(TypedValue.COMPLEX_UNIT_SP, 150 * width / 1794);
 
         //绑定switch事件
-        Switch switchTime = (Switch) view.findViewById(R.id.switch_time);
-        Switch switchDate = (Switch) view.findViewById(R.id.switch_date);
-        Switch switchWeek = (Switch) view.findViewById(R.id.switch_week);
-        Switch switchWeather1=(Switch)view.findViewById(R.id.switch_weather1);
-        Switch switchWeather2=(Switch)view.findViewById(R.id.switch_weather2);
-        Switch switchWeather3=(Switch)view.findViewById(R.id.switch_weather3);
+        switchTime = (Switch) view.findViewById(R.id.switch_time);
+        switchDate = (Switch) view.findViewById(R.id.switch_date);
+        switchWeek = (Switch) view.findViewById(R.id.switch_week);
+        switchWeather1=(Switch)view.findViewById(R.id.switch_weather1);
+        switchWeather2=(Switch)view.findViewById(R.id.switch_weather2);
+        switchWeather3=(Switch)view.findViewById(R.id.switch_weather3);
         switchTime.setOnCheckedChangeListener(this);
         switchDate.setOnCheckedChangeListener(this);
         switchWeek.setOnCheckedChangeListener(this);
@@ -83,7 +89,38 @@ public class Show extends Fragment implements CompoundButton.OnCheckedChangeList
             _locationClient.start();
         }
 
+        myDBOpenHelper=new MyDBOpenHelper(getActivity(),"clock.db",null,1);
+        SQLiteDatabase db=myDBOpenHelper.getWritableDatabase();
+        Cursor cursor=db.query("config",null,null,null,null,null,null);
+        if(cursor.moveToFirst()){
+            int id=cursor.getInt(cursor.getColumnIndex("id"));
+            int time=cursor.getInt(cursor.getColumnIndex("time"));
+            int date=cursor.getInt(cursor.getColumnIndex("date"));
+            int week=cursor.getInt(cursor.getColumnIndex("week"));
+            String location=cursor.getString(cursor.getColumnIndex("location"));
+            int firstDay=cursor.getInt(cursor.getColumnIndex("firstDay"));
+            int secondDay=cursor.getInt(cursor.getColumnIndex("secondDay"));
+            int thirdDay=cursor.getInt(cursor.getColumnIndex("thirdDay"));
+            int num=cursor.getInt(cursor.getColumnIndex("num"));
+            config=new Config(id,time,date,week,firstDay,secondDay,thirdDay,num,location);
+        }else{
+
+        }
+
         return view;
+    }
+
+    /**
+     * Called when the Fragment is no longer started.  This is generally
+     * tied to {@link Activity#onStop() Activity.onStop} of the containing
+     * Activity's lifecycle.
+     */
+    @Override
+    public void onStop() {
+        super.onStop();
+        if(config==null){
+            ContentValues values = new ContentValues();
+        }
     }
 
     /**

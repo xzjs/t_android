@@ -4,6 +4,8 @@ import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     private ViewPager viewPager;
 
     private MyFragmentPagerAdapter myFragmentPagerAdapter;
+    private MyDBOpenHelper myDBOpenHelper;
+    private Config config;
 
     //几个代表页面的常量
     public static final int PAGE_ONE = 0;
@@ -42,9 +46,10 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
             myFragmentPagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager());
             bindViews();
             radioButtonShow.setChecked(true);
-
         }
     }
+
+
 
     private void bindViews() {
         radioGroup = (RadioGroup) findViewById(R.id.rg_tab_bar);
